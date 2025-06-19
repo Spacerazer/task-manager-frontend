@@ -26,7 +26,7 @@
 
 1. **Клонируйте репозиторий**
    ```bash
-   git clone [<repository-url>](https://github.com/Spacerazer/task-manager-frontend.git)
+   git clone https://github.com/Spacerazer/task-manager-frontend.git
    cd task-manager-frontend
    ```
 
