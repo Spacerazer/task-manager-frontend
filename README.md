@@ -1,72 +1,183 @@
-Meow mmeow meow  meow
+# Менеджер задач - Frontend
 
-# Getting Started with Create React App
+Веб-приложение для управления задачами и проектами, разработанное на React с использованием Material-UI.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Возможности
 
-## Available Scripts
+### Основной функционал
+- **Управление задачами**: создание, редактирование, удаление задач
+- **Управление проектами**: создание проектов с отслеживанием прогресса
+- **Система уведомлений**: отслеживание новых задач и дедлайнов
+- **Статистика и аналитика**: детальная статистика по задачам и проектам
+- **Фильтрация и поиск**: поиск задач по различным критериям
 
-In the project directory, you can run:
+### Дополнительные возможности
+- **Адаптивный дизайн**: поддержка мобильных устройств
+- **JWT аутентификация**: безопасная система входа
+- **Mock API**: встроенные моки для демонстрации
+- **Современный UI**: Material-UI компоненты
 
-### `npm start`
+## Требования
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Node.js 16+ 
+- npm или yarn
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Установка
 
-### `npm test`
+1. **Клонируйте репозиторий**
+   ```bash
+   git clone <repository-url>
+   cd task-manager-frontend
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Установите зависимости**
+   ```bash
+   npm install
+   ```
 
-### `npm run build`
+3. **Запустите проект**
+   ```bash
+   npm start
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. **Откройте браузер**
+   ```
+   http://localhost:3000
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Авторизация
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Для демонстрации используйте следующие учетные данные:
+- **Логин**: `admin`
+- **Пароль**: `admin`
 
-### `npm run eject`
+## Использование
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Страница задач
+- Просмотр всех задач в виде карточек
+- Фильтрация по статусу, приоритету, исполнителю и проекту
+- Создание новых задач через плавающую кнопку
+- Редактирование и удаление задач
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Страница проектов
+- Просмотр проектов с прогресс-барами
+- Создание новых проектов
+- Просмотр задач в рамках проекта
+- Статистика по каждому проекту
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Страница уведомлений
+- Просмотр непрочитанных и прочитанных уведомлений
+- Отметка уведомлений как прочитанные
+- Удаление уведомлений
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Страница статистики
+- Общая статистика по задачам
+- Статистика по проектам
+- Загрузка исполнителей
+- Графики прогресса
 
-## Learn More
+## Архитектура
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+src/
+├── components/          # Переиспользуемые компоненты
+├── hooks/              # Пользовательские хуки
+├── layouts/            # Макеты страниц
+├── mocks/              # Mock API для демонстрации
+├── pages/              # Страницы приложения
+├── services/           # API сервисы
+└── utils/              # Утилиты
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Технологии
 
-### Code Splitting
+- **React 19** - основная библиотека
+- **Material-UI 7** - UI компоненты
+- **React Router 7** - маршрутизация
+- **Axios** - HTTP клиент
+- **Day.js** - работа с датами
+- **MSW** - Mock Service Worker для API
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Основные зависимости
 
-### Analyzing the Bundle Size
+```json
+{
+  "@mui/material": "^7.1.1",
+  "@mui/icons-material": "^7.1.1",
+  "react": "^19.1.0",
+  "react-router-dom": "^7.6.2",
+  "axios": "^1.10.0",
+  "dayjs": "^1.11.13",
+  "msw": "^1.3.5"
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Настройка для продакшена
 
-### Making a Progressive Web App
+1. **Сборка проекта**
+   ```bash
+   npm run build
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+2. **Настройка API**
+   - Измените `baseURL` в `src/services/api.js`
+   - Отключите MSW в продакшене
 
-### Advanced Configuration
+3. **Переменные окружения**
+   ```bash
+   REACT_APP_API_URL=http://your-backend-url/api
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Тестирование
 
-### Deployment
+```bash
+npm test
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## API Endpoints
 
-### `npm run build` fails to minify
+Приложение ожидает следующие API endpoints:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Аутентификация
+- `POST /api/auth/login` - вход в систему
+
+### Пользователи
+- `GET /api/users/me` - информация о текущем пользователе
+- `GET /api/users` - список пользователей
+
+### Задачи
+- `GET /api/tasks` - список задач
+- `POST /api/tasks` - создание задачи
+- `PATCH /api/tasks/{id}` - обновление задачи
+- `DELETE /api/tasks/{id}` - удаление задачи
+
+### Проекты
+- `GET /api/projects` - список проектов
+- `POST /api/projects` - создание проекта
+- `PATCH /api/projects/{id}` - обновление проекта
+- `DELETE /api/projects/{id}` - удаление проекта
+
+### Уведомления
+- `GET /api/notifications` - список уведомлений
+- `PATCH /api/notifications/{id}` - обновление уведомления
+- `DELETE /api/notifications/{id}` - удаление уведомления
+
+## Вклад в проект
+
+1. Форкните репозиторий
+2. Создайте ветку для новой функции
+3. Внесите изменения
+4. Создайте Pull Request
+
+## Лицензия
+
+MIT License
+
+## Поддержка
+
+Если у вас возникли вопросы или проблемы, создайте Issue в репозитории.
+
+## Связь со мной  
+[![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/Spacerazer)  
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:spacerazer1123123@gmail.com)  
+
